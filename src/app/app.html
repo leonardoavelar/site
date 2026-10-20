@@ -1,0 +1,23 @@
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" routerLink="/inicio" aria-label="Faça Seu Dinheiro Render, página inicial">
+      <span class="brand-mark" aria-hidden="true">R$</span>
+      <span>faça seu dinheiro <strong>render</strong></span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a routerLink="/inicio" routerLinkActive="active">Início</a>
+      <a routerLink="/educacao" routerLinkActive="active">Aprenda</a>
+      <a routerLink="/simulador" routerLinkActive="active">Simulador</a>
+      <a routerLink="/comparador" routerLinkActive="active">Comparador</a>
+      <a routerLink="/carteira" routerLinkActive="active">Carteira</a>
+      <a routerLink="/historico" routerLinkActive="active">Histórico</a>
+    </nav>
+  </header>
+  <main>
+    <router-outlet />
+  </main>
+  <footer class="site-footer">
+    <span>Educação financeira para escolhas mais conscientes.</span>
+    <span>Conteúdo educativo — não é recomendação de investimento.</span>
+  </footer>
+</div>

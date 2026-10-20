@@ -5,8 +5,10 @@
     "ng": "ng",
     "start": "ng serve --host 127.0.0.1",
     "build": "ng build",
+    "build:html": "ng build --configuration production,offline && node scripts/export-html.mjs",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --watch=false"
+    "test": "ng test --watch=false",
+    "test:html": "npm run build:html && node --test scripts/export-html.test.mjs"
   },
   "private": true,
   "packageManager": "npm@11.19.1",
@@ -26,6 +28,7 @@
     "@angular/build": "^22.2.3",
     "@angular/cli": "^22.2.3",
     "@angular/compiler-cli": "^22.2.0",
+    "esbuild": "^0.28.2",
     "jsdom": "^30.0.0",
     "prettier": "^3.8.1",
     "typescript": "~6.0.2",

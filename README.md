@@ -35,8 +35,41 @@ Abra [http://localhost:4200](http://localhost:4200) no navegador do próprio com
 | --- | --- |
 | `npm start` | Servidor Angular local em `http://localhost:4200`. |
 | `npm run build` | Build otimizado de produção em `dist/fazer-seu-dinheiro-render/browser`. |
+| `npm run build:html` | Gera um único HTML offline em `dist/offline/site.html`. |
 | `npm test` | Executa uma vez os testes unitários pelo Angular CLI/Vitest. |
 | `npm run watch` | Recompila continuamente em modo de desenvolvimento. |
+
+## Distribuir como um único arquivo HTML
+
+```powershell
+npm run build:html
+```
+
+O arquivo gerado em `dist\offline\site.html` pode ser copiado, renomeado e aberto
+diretamente com dois cliques, sem servidor, internet, Node.js ou instalação do
+Angular no computador de destino. Apenas esse arquivo precisa ser distribuído.
+
+O projeto continua em Angular: o HTML inclui o JavaScript compilado do aplicativo
+e do Angular, as páginas carregadas sob demanda, os estilos, o favicon e os avisos
+de licenças. Não se trata de uma conversão para HTML estático sem JavaScript.
+Node.js e as dependências do projeto são necessários apenas para gerar o arquivo.
+
+A exportação usa rotas com `#` (por exemplo, `site.html#/simulador`) para funcionar
+via `file://`. O build web normal permanece com suas rotas e arquivos separados.
+Use um navegador moderno com JavaScript habilitado, como Chrome, Edge, Firefox ou
+Safari atual; não há garantia para navegadores antigos. Em dispositivos móveis,
+a abertura de arquivos locais depende das restrições do sistema e do navegador.
+
+Histórico e carteira continuam no LocalStorage. A disponibilidade e a persistência
+desse armazenamento em arquivos locais dependem do navegador e das configurações
+de privacidade; mover ou renomear o HTML pode mudar o armazenamento utilizado.
+O arquivo distribuído não inclui os dados salvos no navegador de quem o gerou.
+
+Para gerar novamente e verificar a estrutura autocontida do HTML:
+
+```powershell
+npm run test:html
+```
 
 ## Funcionalidades
 

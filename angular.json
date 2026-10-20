@@ -50,6 +50,19 @@
               ],
               "outputHashing": "all"
             },
+            "offline": {
+              "browser": "src/main.offline.ts",
+              "baseHref": "./",
+              "outputPath": "dist/offline",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": false
+              }
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
